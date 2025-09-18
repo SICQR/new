@@ -1,9 +1,94 @@
-{
-  "version": 2,
-  "builds": [
-    { "src": "next.config.js", "use": "@vercel/next" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/" }
-  ]
-}
+components/Navbar.tsx
+v10
+import Link from "next/link";
+
+// HOTMESS Navbar: Responsive, accessible.
+export default function Navbar() {
+  return (
+    <nav className="navbar" aria-label="Main navigation">
+
+components/HeroSection.tsx
+v10
+// HOTMESS Hero: Bold headline, clear CTA, accessible image
+export default function HeroSection() {
+  return (
+    <section className="hero">
+      <div className="hero-content">
+        <h1>Next-Gen Drops, AR Unlocks & Radio</h1>
+
+components/FeatureStrip.tsx
+v10
+import Link from "next/link";
+
+// HOTMESS Feature Strip: Icon-based quick navigation
+const features = [
+  { icon: "🛍️", label: "Shop Drops", href: "/shop" },
+  { icon: "🔓", label: "Unlock AR", href: "/ar-unlock" },
+
+components/FeaturedDrops.tsx
+v9
+// HOTMESS Featured Drops: Responsive grid, accessible cards
+const drops = [
+  { id: 1, title: "Delta Hoodie", image: "/assets/drop1.jpg", price: "£75", partner: "Delta Crew", arUnlock: true },
+  { id: 2, title: "Hotmess Cap", image: "/assets/drop2.jpg", price: "£30", partner: "HOTMESS", arUnlock: false },
+  { id: 3, title: "London Tee", image: "/assets/drop3.jpg", price: "£40", partner: "East End", arUnlock: true },
+];
+
+components/UpcomingEvents.tsx
+v9
+// HOTMESS Events: Accessible, date/time, weather badge
+const events = [
+  { id: 101, title: "HOTMESS Rooftop Party", date: "2025-09-19", time: "18:00", location: "Shoreditch", weather: "🌤️", rsvp: true },
+  { id: 102, title: "London Radio Live: DJ K", date: "2025-09-22", time: "20:00", location: "Online", weather: "-", rsvp: false },
+];
+
+
+components/WeatherFeed.tsx
+v9
+// HOTMESS Weather: Accessible, emoji, city, temp, status
+const weather = [
+  { location: "London", temp: "22°C", status: "Sunny", icon: "🌤️" },
+  { location: "Shoreditch", temp: "21°C", status: "Partly Cloudy", icon: "⛅" },
+  { location: "Event: Rooftop", temp: "20°C", status: "Clear", icon: "🌙" }
+];
+
+components/RadioPlayer.tsx
+v9
+// HOTMESS Radio: Accessible, embed, info
+export default function RadioPlayer() {
+  return (
+    <section className="radio-section">
+      <h2>HOTMESS Radio</h2>
+      <div className="radio-player">
+
+components/CommunityFeed.tsx
+v9
+// HOTMESS Community: Recent posts, leaderboard
+const posts = [
+  { user: "Jess", content: "Loving the rooftop party vibes! 🔥" },
+  { user: "Sam", content: "Just unlocked the AR feature—amazing experience!" },
+  { user: "DJ K", content: "Catch me live tomorrow night!" },
+];
+
+components/PartnerStrip.tsx
+v9
+// HOTMESS Partners: Brand logos, CTA
+const partners = [
+  { name: "Delta Crew", logo: "/assets/delta-logo.png" },
+  { name: "HOTMESS", logo: "/assets/hotmess-logo.png" },
+  { name: "East End", logo: "/assets/eastend-logo.png" },
+];
+
+components/Footer.tsx
+v9
+// HOTMESS Footer: Accessible, legal/social links
+export default function Footer() {
+  return (
+    <footer className="footer">
+      <nav className="footer-links" aria-label="Footer navigation">
+        <a href="/about">About</a>
+
+app/page.tsx
+v12
+// HOTMESS Home Page: Imports all sections in order
+import
